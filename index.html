@@ -10,6 +10,51 @@
         <h1>Food Delivery Order Manager</h1>
         <p>Manage your food delivery orders</p>
     </div>
+    <div class="tabs">
+        
+    </div>
+
+    <div class="container">
+         <div id="add-order" class="tab-content active">
+            <h2>Add New Order</h2>
+
+            <form id="orderForm" onsubmit="addOrder(event)">
+                <div class="form-group">
+                    <label for="orderId">Order ID:</label>
+                    <input type="text" id="orderId" placeholder="Enter order ID (e.g. ORD-101)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="restaurantName">Restaurant Name:</label>
+                    <input type="text" id="restaurantName" placeholder="Enter restaurant name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="itemCount">Number of Items:</label>
+                    <input type="number" id="itemCount" placeholder="Enter item count" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="deliveryDistance">Delivery Distance (KM):</label>
+                    <input type="number" id="deliveryDistance" placeholder="Enter distance in KM" min="0.1" step="0.1"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label>Payment Status:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="isPaid" value="false" checked> Unpaid</label>
+                        <label><input type="radio" name="isPaid" value="true"> Paid</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Add Order</button>
+            </form>
+
+            <div id="addMessage" class="message hidden"></div>
+        </div>
+    </div>
+
     
 </body>
 </html>
