@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Food Delivery Order Manager</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
     <div class="header">
         <h1>Food Delivery Order Manager</h1>
         <p>Manage your food delivery orders</p>
     </div>
+
     <div class="tabs">
-        
+        <button class="tab-btn active" onclick="showTab('add-order')">Add Order</button>
+        <button class="tab-btn" onclick="showTab('view-orders')">View Orders</button>
+        <button class="tab-btn" onclick="showTab('filter-assign')">Filter & Assign</button>
     </div>
 
     <div class="container">
-         <div id="add-order" class="tab-content active">
+
+        <div id="add-order" class="tab-content active">
             <h2>Add New Order</h2>
 
             <form id="orderForm" onsubmit="addOrder(event)">
@@ -53,8 +61,64 @@
 
             <div id="addMessage" class="message hidden"></div>
         </div>
+
+        <div id="view-orders" class="tab-content">
+            <h2>All Orders</h2>
+            <div id="ordersList" class="orders-list">
+                <p class="no-data">No orders added yet. Go to "Add Order" tab to add some!</p>
+            </div>
+        </div>
+
+        <div id="filter-assign" class="tab-content">
+            <h2>Filter Orders</h2>
+
+            <div class="filter-box">
+                <div class="filter-row">
+                    <div class="filter-item">
+                        <label for="filterStatus">Filter by Status:</label>
+                        <select id="filterStatus" onchange="filterOrders()">
+                            <option value="all">All</option>
+                            <option value="paid">Paid</option>
+                            <option value="unpaid">Unpaid</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-item">
+                        <label for="filterDistance">Max Distance (KM):</label>
+                        <input type="number" id="filterDistance" placeholder="e.g. 10" min="0.1" step="0.1"
+                            oninput="filterOrders()">
+                    </div>
+
+                    <button class="btn-clear" onclick="clearFilters()">Clear Filters</button>
+                </div>
+            </div>
+
+            <div class="assign-box">
+                <h3>Assign Delivery</h3>
+                <p>Assigns the nearest unpaid order within the given distance.</p>
+                <div class="assign-row">
+                    <input type="number" id="assignDistance" placeholder="Max distance (KM)" min="0.1" step="0.1">
+                    <button class="btn-assign" onclick="assignDelivery()">Assign Delivery</button>
+                </div>
+            </div>
+
+            <div id="outputPanel" class="output-panel hidden">
+                <h3>Result</h3>
+                <div id="outputResult"></div>
+            </div>
+
+            <h3>Filtered Orders (<span id="filteredCount">0</span>)</h3>
+            <div id="filteredList" class="orders-list">
+                <p class="no-data">No orders to show.</p>
+            </div>
+        </div>
     </div>
 
-    
+    <div class="footer">
+        <p>Food Delivery Order Manager &copy; 2025</p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
