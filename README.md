@@ -11,3 +11,9 @@ A web-based application for managing food delivery orders with automatic deliver
 - **Filter Orders** – Filter by Paid/Unpaid status and maximum delivery distance
 - **Assign Delivery** – Automatically assigns delivery to the nearest unpaid order within a given distance
 - **Error Handling** – Input validation, duplicate order checks, and user-friendly error 
+
+## Tech Stack
+
+- **HTML5** – Semantic structure
+- **CSS3** – Modern dark theme, responsive design, animations
+- **JavaScript (Vanilla)** – No frameworks or libraries
