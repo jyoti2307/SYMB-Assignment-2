@@ -2,7 +2,7 @@ A web-based application for managing food delivery orders with automatic deliver
 
 ## Live Demo
 
-** Live Deployment URL](comingsoon)**
+**[ Live Deployment URL](https://symb-assignment-2.vercel.app/)**
 
 ## Features
 
