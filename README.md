@@ -17,16 +17,16 @@ A web-based application for managing food delivery orders with automatic deliver
 ## Tech Stack
 
 - **HTML5** – Semantic structure
-- **CSS3** – Modern dark theme, responsive design, animations
+- **CSS3** – Modern theme, responsive design, animations
 - **JavaScript (Vanilla)** – No frameworks or libraries
 
 ## Project Structure
 
 ```
 ├── index.html    # Main HTML file
-├── style.css     # All styles (dark theme, responsive)
+├── style.css     # All styles (Modern theme, responsive)
 ├── script.js     # Application logic (CRUD, filter, assign)
-└── README.md     # This file
+└── README.md     # This file is about project info
 ```
 
 ## How to Run Locally
